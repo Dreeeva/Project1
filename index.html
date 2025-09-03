@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dreeeva - Harvesting Your Dreams</title>
+    <meta name="description" content="Dreeeva - Harvesting Your Dreams" />
+    <meta name="author" content="Dreeeva" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="apple-touch-icon" href="logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="logo.png" alt="Dreeeva logo" class="logo-img">
+                    <span class="logo-text">Dreeeva</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <button onclick="scrollToSection('about')" class="nav-link">About Us</button>
+                    <button onclick="scrollToSection('contact')" class="nav-link">Contact Us</button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" id="mobileMenu">
+                <div class="mobile-nav-content">
+                    <button onclick="scrollToSection('about')" class="mobile-nav-link">About Us</button>
+                    <button onclick="scrollToSection('contact')" class="mobile-nav-link">Contact Us</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Harvesting Your Dreams</h1>
+            <p class="hero-description">
+                Through this platform, we empower farmers and communities by connecting verified tractor owners with people needing reliable farming services.
+            </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About Us</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="card-icon">🌱</div>
+                        <h3>Our Mission</h3>
+                        <p>To revolutionize agricultural services by creating a trusted platform that connects farmers with reliable tractor services, ensuring sustainable growth for rural communities.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">🤝</div>
+                        <h3>Community Focus</h3>
+                        <p>We believe in the power of community collaboration. By bringing together tractor owners and farmers, we create opportunities for mutual growth and prosperity.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">🚜</div>
+                        <h3>Quality Assurance</h3>
+                        <p>Every tractor owner on our platform is verified and rated, ensuring you get reliable, professional service for your farming needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-icon">📧</div>
+                                <div>
+                                    <p class="contact-label">Email</p>
+                                    <a href="mailto:mihir@dreeeva.com" class="contact-link">mihir@dreeeva.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">💼</div>
+                                <div>
+                                    <p class="contact-label">LinkedIn</p>
+                                    <a href="https://linkedin.com/company/dreeeva" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/company/dreeeva</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">📷</div>
+                                <div>
+                                    <p class="contact-label">Instagram</p>
+                                    <a href="https://www.instagram.com/dreeeva_?igsh=MTN5MXUzMGIxbGdieQ==" target="_blank" rel="noopener noreferrer" class="contact-link">instagram.com/dreeeva</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-message">
+                            <p>For inquiries regarding Dreeeva, please contact us directly.</p>
+                            <p>Support us on LinkedIn and Instagram.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo -->
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Dreeeva logo" class="footer-logo-img">
+                    <span class="footer-logo-text">Dreeeva</span>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="footer-nav">
+                    <button onclick="scrollToSection('about')" class="footer-nav-link">About Us</button>
+                    <button onclick="scrollToSection('contact')" class="footer-nav-link">Contact Us</button>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobileMenu');
+                if (mobileMenu.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            }
+        }
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
