@@ -304,7 +304,7 @@ body {
     font-size: 0.875rem;
     color: var(--muted-foreground);
     margin-bottom: 0.25rem;
-    text-align: right;
+    text-align: left;
 }
 
 .contact-link {
