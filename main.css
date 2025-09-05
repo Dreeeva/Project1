@@ -1,10 +1,4 @@
-/* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* ===== CSS VARIABLES ===== */
 :root {
     --primary: #16a34a;
     --primary-foreground: #ffffff;
@@ -15,7 +9,14 @@
     --border: #e2e8f0;
     --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
 body {
@@ -31,7 +32,7 @@ body {
     padding: 0 1rem;
 }
 
-/* Header */
+/* ===== HEADER ===== */
 .header {
     position: fixed;
     top: 0;
@@ -69,6 +70,7 @@ body {
     color: var(--foreground);
 }
 
+/* ===== NAVIGATION ===== */
 .nav-desktop {
     display: none;
 }
@@ -155,7 +157,7 @@ body {
     color: var(--primary);
 }
 
-/* Hero Section */
+/* ===== HERO SECTION ===== */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -195,7 +197,7 @@ body {
     line-height: 1.75;
 }
 
-/* About Section */
+/* ===== ABOUT SECTION ===== */
 .about {
     padding: 5rem 0;
     background: var(--background);
@@ -220,6 +222,7 @@ body {
     gap: 2rem;
     margin-top: 2rem;
 }
+
 .about-card {
     background: white;
     padding: 2rem;
@@ -245,7 +248,27 @@ body {
     line-height: 1.6;
 }
 
-/* Contact Section */
+/* ===== COMING SOON SECTION ===== */
+.coming-soon {
+    padding: 5rem 0;
+    background: #f8fafc;
+}
+
+.coming-soon-content {
+    max-width: 72rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.coming-soon-description {
+    font-size: 1.125rem;
+    color: var(--muted);
+    max-width: 48rem;
+    margin: 0 auto 3rem auto;
+    line-height: 1.75;
+}
+
+/* ===== CONTACT SECTION ===== */
 .contact {
     padding: 5rem 0;
     background: var(--background);
@@ -335,7 +358,7 @@ body {
     line-height: 1.75;
 }
 
-/* Contact Form Styles */
+/* ===== CONTACT FORM ===== */
 .contact-form-section {
     width: 100%;
 }
@@ -431,7 +454,7 @@ body {
     transform: none;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 .footer {
     background: var(--primary);
     color: var(--primary-foreground);
@@ -484,7 +507,16 @@ body {
     color: var(--primary-foreground);
 }
 
-/* Responsive Design */
+.footer-copy {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    opacity: 0.9;
+    font-size: 0.875rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
 @media (min-width: 768px) {
     .nav-desktop {
         display: flex;
@@ -537,83 +569,3 @@ body {
         font-size: 3rem;
     }
 }
-
-/* Smooth transitions */
-* {
-    transition: all 0.3s ease;
-}
-
-/* Coming Soon Section */
-.coming-soon {
-    padding: 5rem 0;
-    background: #f8fafc;
-}
-
-.coming-soon-content {
-    max-width: 72rem;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.coming-soon-description {
-    font-size: 1.125rem;
-    color: var(--muted);
-    max-width: 48rem;
-    margin: 0 auto 3rem auto;
-    line-height: 1.75;
-}
-
-.mobile-app-feature {
-    background: white;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: var(--shadow-medium);
-    text-align: center;
-    max-width: 400px;
-    margin: 2rem auto 0 auto;
-}
-.feature-item {
-    background: white;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: var(--shadow-medium);
-    text-align: center;
-}
-
-.feature-icon {
-    text-align: center;
-    display: block;    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.feature-item h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--foreground);
-    margin-bottom: 1rem;
-}
-
-.feature-item p {
-    color: var(--muted);
-    line-height: 1.6;
-}
-
- .mobile-app-feature h3 {
-    text-align: center;
-    margin-bottom: 1rem;
-}
-.mobile-app-feature p {
-    text-align: center;
-    color: var(--muted);
-}
-
-/* Mobile responsive styles */
- @media (max-width: 768px) {
-    .about-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    .about-card {
-        max-width: 100%;
-    }
-}  
