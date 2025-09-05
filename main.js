@@ -49,7 +49,7 @@ function initializeContactForm() {
             submitBtn.disabled = true;
             
             // Submit to Google Sheets
-            const scriptUrl = 'https://script.google.com/macros/s/AKfycbw127kB6txa-aBdpzs_pdOLrUyo6rmQtLuRFtXLOaltFptCDzvXMu3qkBxHRegjKbM1/exec';
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbzRKock_SvyOYuvevZeDCskYb7Fc4z-BUUYK203K3XeI9DGyYcCCtOusf8MwI7-05R24Q/exec';
             const data = {
                 name: name,
                 email: email,
