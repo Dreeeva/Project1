@@ -98,39 +98,65 @@
         </div>
     </section>
 
-    <!-- Contact Section -->    <section id="contact" class="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
         <div class="container">
             <div class="contact-content">
                 <h2 class="section-title">Contact Us</h2>
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <h3>Get in Touch</h3>
-                        <div class="contact-items">
-                            <div class="contact-item">
-                                <div class="contact-icon">📧</div>
-                                <div>
-                                    <p class="contact-label">Email</p>
-                                    <a href="mailto:mihir@dreeeva.com" class="contact-link">mihir@dreeeva.com</a>
+                <div class="contact-grid">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <h3>Get in Touch</h3>
+                            <div class="contact-items">
+                                <div class="contact-item">
+                                    <div class="contact-icon">📧</div>
+                                    <div>
+                                        <p class="contact-label">Email</p>
+                                        <a href="mailto:mihir@dreeeva.com" class="contact-link">mihir@dreeeva.com</a>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">💼</div>
+                                    <div>
+                                        <p class="contact-label">LinkedIn</p>
+                                        <a href="https://linkedin.com/company/dreeeva" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/company/dreeeva</a>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">📷</div>
+                                    <div>
+                                        <p class="contact-label">Instagram</p>
+                                        <a href="https://www.instagram.com/dreeeva_?igsh=MTN5MXUzMGIxbGdieQ==" target="_blank" rel="noopener noreferrer" class="contact-link">instagram.com/dreeeva</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">💼</div>
-                                <div>
-                                    <p class="contact-label">LinkedIn</p>
-                                    <a href="https://linkedin.com/company/dreeeva" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/company/dreeeva</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">📷</div>
-                                <div>
-                                    <p class="contact-label">Instagram</p>
-                                    <a href="https://www.instagram.com/dreeeva_?igsh=MTN5MXUzMGIxbGdieQ==" target="_blank" rel="noopener noreferrer" class="contact-link">instagram.com/dreeeva</a>
-                                </div>
+                            <div class="contact-message">
+                                <p>For inquiries regarding Dreeeva, please contact us directly.</p>
+                                <p>Support us on LinkedIn and Instagram.</p>
                             </div>
                         </div>
-                        <div class="contact-message">
-                            <p>For inquiries regarding Dreeeva, please contact us directly.</p>
-                            <p>Support us on LinkedIn and Instagram.</p>
+                    </div>
+
+                    <!-- Send Message Form -->
+                    <div class="contact-form-section">
+                        <div class="contact-form-card">
+                            <h3>Send us a Message</h3>
+                            <form class="contact-form" id="contactForm">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Name *</label>
+                                    <input type="text" id="name" name="name" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" id="email" name="email" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="form-submit">Send Message</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -157,7 +183,7 @@
             </div>
         </div>
         <div class="footer-copy" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); text-align: center; opacity: 0.9;">
-            © 2025 Dreeeva - All Rights Reserved.
+            © 2025 Dreeeeva - All Rights Reserved
         </div>
     </footer>
 
@@ -178,6 +204,72 @@
             const mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('active');
         }
+
+        // Contact form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    const name = formData.get('name').trim();
+                    const email = formData.get('email').trim();
+                    const message = formData.get('message').trim();
+                    
+                    // Basic validation
+                    if (!name || !email || !message) {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+                    
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert('Please enter a valid email address.');
+                        return;
+                    }
+                    
+                    // Show loading state
+                    const submitBtn = contactForm.querySelector('.form-submit');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // Store data in Google Sheets using Apps Script
+                    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzRKock_SvyOYuvevZeDCskYb7Fc4z-BUUYK203K3XeI9DGyYcCCtOusf8MwI7-05R24Q/exec'; // Replace with your Apps Script URL
+                    const data = {
+                        name: name,
+                        email: email,
+                        message: message,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    fetch(scriptUrl, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(() => {
+                        alert('Thank you for your message! We will get back to you soon.');
+                        contactForm.reset();
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        alert('There was an error sending your message. Please try again or contact us directly.');
+                    })
+                    .finally(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+        });
     </script>
 </body>
 </html>
