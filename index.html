@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dreeeva - Harvesting Your Dreams</title>
-    <meta name="description" content="Dreeeva - Harvesting Your Dreams" />
-    <meta name="author" content="Dreeeva" />
-    <link rel="icon" type="image/png" href="logo.png" />
-    <link rel="apple-touch-icon" href="logo.png" />
+    <meta name="description" content="Dreeeva - Harvesting Your Dreams">
+    <meta name="author" content="Dreeeva">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- ===== HEADER ===== -->
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <!-- Logo -->
                 <div class="logo">
                     <img src="logo.png" alt="Dreeeva logo" class="logo-img">
                     <span class="logo-text">Dreeeva</span>
                 </div>
 
-                <!-- Desktop Navigation -->
                 <nav class="nav-desktop">
                     <button onclick="scrollToSection('about')" class="nav-link">About Us</button>
                     <button onclick="scrollToSection('coming-soon')" class="nav-link">Coming Soon</button>
                     <button onclick="scrollToSection('contact')" class="nav-link">Contact Us</button>
                 </nav>
 
-                <!-- Mobile Menu Button -->
                 <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                     <span class="menu-icon"></span>
                 </button>
             </div>
 
-            <!-- Mobile Navigation -->
             <nav class="nav-mobile" id="mobileMenu">
                 <div class="mobile-nav-content">
                     <button onclick="scrollToSection('about')" class="mobile-nav-link">About Us</button>
@@ -48,7 +50,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ===== HERO SECTION ===== -->
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -59,7 +61,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ===== ABOUT SECTION ===== -->
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
@@ -85,7 +87,7 @@
         </div>
     </section>
 
-    <!-- Coming Soon Section -->
+    <!-- ===== COMING SOON SECTION ===== -->
     <section id="coming-soon" class="coming-soon">
         <div class="container">
             <div class="coming-soon-content">
@@ -98,12 +100,34 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ===== CONTACT SECTION ===== -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-content">
                 <h2 class="section-title">Contact Us</h2>
                 <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-section">
+                        <div class="contact-form-card">
+                            <h3>Send us a Message</h3>
+                            <form class="contact-form" id="contactForm">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Name *</label>
+                                    <input type="text" id="name" name="name" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" id="email" name="email" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="form-submit">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+
                     <!-- Contact Information -->
                     <div class="contact-info">
                         <div class="contact-card">
@@ -137,44 +161,20 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Send Message Form -->
-                    <div class="contact-form-section">
-                        <div class="contact-form-card">
-                            <h3>Send us a Message</h3>
-                            <form class="contact-form" id="contactForm">
-                                <div class="form-group">
-                                    <label for="name" class="form-label">Name *</label>
-                                    <input type="text" id="name" name="name" class="form-input" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email" class="form-label">Email *</label>
-                                    <input type="email" id="email" name="email" class="form-input" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="message" class="form-label">Message *</label>
-                                    <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
-                                </div>
-                                <button type="submit" class="form-submit">Send Message</button>
-                            </form>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <!-- Logo -->
                 <div class="footer-logo">
                     <img src="logo.png" alt="Dreeeva logo" class="footer-logo-img">
                     <span class="footer-logo-text">Dreeeva</span>
                 </div>
 
-                <!-- Navigation Links -->
                 <nav class="footer-nav">
                     <button onclick="scrollToSection('about')" class="footer-nav-link">About Us</button>
                     <button onclick="scrollToSection('coming-soon')" class="footer-nav-link">Coming Soon</button>
@@ -182,17 +182,18 @@
                 </nav>
             </div>
         </div>
-        <div class="footer-copy" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); text-align: center; opacity: 0.9;">
-            © 2025 Dreeeeva - All Rights Reserved
+        <div class="footer-copy">
+            © 2025 Dreeeva - All Rights Reserved
         </div>
     </footer>
 
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
+        // Navigation functions
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
-                // Close mobile menu if open
                 const mobileMenu = document.getElementById('mobileMenu');
                 if (mobileMenu.classList.contains('active')) {
                     toggleMobileMenu();
@@ -213,19 +214,17 @@
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    // Get form data
                     const formData = new FormData(contactForm);
                     const name = formData.get('name').trim();
                     const email = formData.get('email').trim();
                     const message = formData.get('message').trim();
                     
-                    // Basic validation
+                    // Validation
                     if (!name || !email || !message) {
                         alert('Please fill in all required fields.');
                         return;
                     }
                     
-                    // Email validation
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!emailRegex.test(email)) {
                         alert('Please enter a valid email address.');
@@ -238,8 +237,8 @@
                     submitBtn.textContent = 'Sending...';
                     submitBtn.disabled = true;
                     
-                    // Store data in Google Sheets using Apps Script
-                    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzRKock_SvyOYuvevZeDCskYb7Fc4z-BUUYK203K3XeI9DGyYcCCtOusf8MwI7-05R24Q/exec'; // Replace with your Apps Script URL
+                    // Submit to Google Sheets
+                    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzRKock_SvyOYuvevZeDCskYb7Fc4z-BUUYK203K3XeI9DGyYcCCtOusf8MwI7-05R24Q/exec';
                     const data = {
                         name: name,
                         email: email,
@@ -250,9 +249,7 @@
                     fetch(scriptUrl, {
                         method: 'POST',
                         mode: 'no-cors',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
+                        headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(data)
                     })
                     .then(() => {
